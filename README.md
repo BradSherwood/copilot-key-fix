@@ -1,8 +1,10 @@
-# ASUS Copilot Key Fix (Remap to Right Ctrl)
+# ASUS Copilot Key Fix — Disable / Remap Copilot Key to Right Ctrl
+
+A proper fix for the Copilot key on ASUS, Lenovo, HP, Dell and other Windows laptops. Unlike simple remapping guides, this actually intercepts all three key events the Copilot button sends.
 
 ## The Problem
 
-Many ASUS laptops (2024+) replaced the **Right Ctrl** key with a **Copilot** key. Pressing it launches Microsoft Copilot instead of acting as a modifier -- making it useless for keyboard shortcuts, gaming, or any workflow that depends on Right Ctrl.
+Many laptops (2024+) replaced the **Right Ctrl** key with a **Copilot** key. Pressing it launches Microsoft Copilot instead of acting as a modifier — making it useless for keyboard shortcuts, gaming, or any workflow that depends on Right Ctrl. This affects ASUS, Lenovo, HP, Dell, and other brands.
 
 ## Why Most "Fixes" Don't Work
 
@@ -116,6 +118,23 @@ Contributions are welcome! Here is how you can help:
 3. **Bug reports** -- If the fix causes issues with specific software or key combinations, please open an issue with details.
 
 4. **Translations** -- The scripts have comments in Spanish. If you want to help translate them or add documentation in other languages, PRs are welcome.
+
+## FAQ
+
+**How do I disable the Copilot key on my ASUS laptop?**
+Run this fix — it intercepts the Copilot key and remaps it to Right Ctrl. You can also modify the script to map it to any other key.
+
+**Does this work on Lenovo / HP / Dell laptops?**
+If your laptop's Copilot key sends the same LWin+LShift+F23 sequence, yes. Run `detectar_tecla.ps1` to check. If it sends different codes, open an issue and we'll add support.
+
+**Can I remap the Copilot key to something other than Right Ctrl?**
+Yes. Edit `copilot_a_ctrl.ahk` and change the `Send "{RCtrl}"` line to whatever key you prefer.
+
+**Why not just use PowerToys / SharpKeys / Registry remapping?**
+Because the Copilot key sends three keys (LWin+LShift+F23), not one. Tools that remap a single key only catch F23, leaving LWin and LShift to trigger unwanted actions. This script intercepts all three.
+
+**Does this affect the regular Windows key?**
+No. The script detects the Copilot key's unique 3-key sequence. Normal Win key presses pass through unchanged (with an imperceptible ~30ms delay).
 
 ## License
 
