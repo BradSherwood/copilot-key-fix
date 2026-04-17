@@ -83,6 +83,12 @@ These devices are known to have the Copilot key and should work with this fix (s
 |-------|-------------|-------|
 | Surface Laptop (7th gen) | Right Win / Menu | |
 
+### LG
+
+| Model | Key Replaced | Notes |
+|-------|-------------|-------|
+| LG gram 16Z90TL | Copilot Key is Right of Right-Alt | |
+
 ## Is the Copilot Key the Same Across Brands?
 
 **Yes.** Microsoft mandated that the Copilot key sends **LWin + LShift + F23** on all OEMs. Dell has explicitly confirmed this is "standard for the Copilot key and done at Microsoft's direction." There are no known brand-specific variations in the key signal.
